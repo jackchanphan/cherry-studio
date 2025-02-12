@@ -36,7 +36,7 @@ const PopupContainer: React.FC<Props> = ({ base: _base, resolve }) => {
   const { base, updateKnowledgeBase } = useKnowledge(_base.id)
 
   useEffect(() => {
-    form.setFieldsValue({ documentCount: base?.documentCount || 6 })
+    form.setFieldsValue({ documentCount: base?.documentCount || 20 })
   }, [base, form])
 
   if (!base) {
@@ -121,9 +121,9 @@ const PopupContainer: React.FC<Props> = ({ base: _base, resolve }) => {
           <Slider
             style={{ width: '100%' }}
             min={1}
-            max={15}
+            max={200}
             step={1}
-            marks={{ 1: '1', 6: t('knowledge.document_count_default'), 15: '15' }}
+            marks={{ 1: '1', 20: t('knowledge.document_count_default'), 200: '200' }}
           />
         </Form.Item>
 
